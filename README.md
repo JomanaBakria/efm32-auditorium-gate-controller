@@ -1,22 +1,26 @@
 # 🎛️ EFM32 Auditorium Gate Controller  
 
 An **EFM32-based embedded system** that controls an auditorium gate, counts people entering/exiting, and displays available seats in real time.  
-The system integrates **IR sensors, PWM-controlled motors, LCD display, and Bluetooth communication** to provide a reliable solution for seat management.  
+The system integrates **Flex sensors, PWM-controlled motors, LCD display, and Bluetooth communication** to provide a reliable solution for seat management.  
 
 ---
 
 ## 🎯 Objectives
-- Control a motorized gate automatically based on **entry/exit sensors**  
-- Track occupancy with a **people counter** (up to 5 seats in this demo)  
-- Display remaining seats on the **segment LCD**  
-- Send live updates via **Bluetooth**  
-- Support manual override with **push buttons**  
+- Control auditorium entry and exit using a **motorized turnstile** driven by PWM.
+- Track occupancy with **Flex sensors** at the entrance and exit.
+- Display the number of **available seats** on the LCD in real time.
+- **Prevent entry when the auditorium is full**:
+  - If no seats are available → the gate does not rotate and entry is blocked.
+  - The person must wait until a seat becomes available.
+  - Once someone exits and a seat is freed → entry is automatically enabled.
+- Provide manual override via **buttons** for testing and control.
+- Send live updates over **Bluetooth** (available seats, PWM level, motor direction, etc.).
 
 ---
 
 ## ✨ Features
 - **EFM32PG28 MCU** with hardware PWM  
-- **2× IR sensors** (entry & exit detection)  
+- **2× Flex sensors** (entry & exit detection)  
 - **DC motor control** (forward/backward with PWM speed control)  
 - **Segment LCD display** (remaining seats)  
 - **Bluetooth (EUSART1 @ 9600 baud)** for status messages  
@@ -31,9 +35,6 @@ The system integrates **IR sensors, PWM-controlled motors, LCD display, and Blue
 - **Exit sensor:**  PD10  
 - **Buttons:** PB1 (Button0), PB6 (Button1)  
 - **Bluetooth:** PD14 (TX) → HC-06 RX, PD15 (RX) ← HC-06 TX  
-
----
-
 
 ---
 
@@ -60,6 +61,3 @@ Here are some pictures of the physical project:
 
 ## 📜 License
 This project is released under the [MIT License](LICENSE).
-
-
-## 📂 Repository Structure
