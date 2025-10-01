@@ -46,8 +46,10 @@ The system integrates **IR sensors, PWM-controlled motors, LCD display, and Blue
 ---
 
 ## 📷 Media
-![System Setup](media/image1.jpeg)  
-![LCD Display](media/image2.jpeg)  
+Here are some pictures of the physical project:
+
+![Front View](./media/image%201.jpeg)  
+![Top View](./media/image%202.jpeg)  
 
 ---
 
